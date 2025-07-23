@@ -1,0 +1,12 @@
+services:
+  api_db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env.dev
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  pgdata:
